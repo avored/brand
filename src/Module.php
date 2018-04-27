@@ -16,6 +16,7 @@ class Module extends ServiceProvider
     public function boot()
     {
         $this->registerResources();
+        $this->publishFiles();
     }
 
     /**
@@ -39,6 +40,17 @@ class Module extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'avored-brand');
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+    }
+
+    /**
+     * Publish Files for AvoRed Brand Modules.
+     *
+     * @return void
+     */
+    public function publishFiles() {
+        $this->publishes([
+            __DIR__ . '/../resources/views' => base_path('themes/avored/default/vendor')
+        ],'avored-module-views');
     }
 
 }
