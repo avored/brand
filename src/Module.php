@@ -1,9 +1,7 @@
 <?php
 namespace AvoRed\Brand;
 
-use AvoRed\Brand\Widget\Brand\Widget;
 use Illuminate\Support\ServiceProvider;
-use AvoRed\Framework\Widget\Facade as WidgetFacade;
 
 class Module extends ServiceProvider
 {
